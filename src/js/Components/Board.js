@@ -10,14 +10,14 @@ export default class Board extends React.Component {
 
     renderSquare(i)
     {
-        return <Square number={i} />;
+        return <Square value={this.props.squares[i]}
+                       onClick={() => this.props.onClick(i)}/>;
     }
 
+
     render() {
-        const status = "Next player: X ";
         return(
           <div>
-              <div className="status">{status}</div>
               <div className="board-row">
                   {this.renderSquare(0)}
                   {this.renderSquare(1)}
@@ -33,6 +33,7 @@ export default class Board extends React.Component {
                   {this.renderSquare(7)}
                   {this.renderSquare(8)}
               </div>
+              <h1> {this.props.title} </h1>
           </div>
         );
     }

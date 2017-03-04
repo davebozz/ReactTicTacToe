@@ -3,7 +3,7 @@ import React from "react";
 export default class Square extends React.Component {
     constructor(props)
     {
-        super(props);
+        super();
     }
 
     concatClassName()
@@ -15,8 +15,10 @@ export default class Square extends React.Component {
     render()
     {
         return(
-            <button className={this.concatClassName()} >
-
+            <button className={this.concatClassName()}
+                    onClick={() => this.props.onClick()}
+            >
+                {this.props.value}
             </button>
         );
     }
