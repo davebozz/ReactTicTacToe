@@ -3,17 +3,11 @@ import React from "react";
 import Square from "./Square";
 
 export default class Board extends React.Component {
-    constructor(props)
-    {
-        super(props);
-    }
-
     renderSquare(i)
     {
         return <Square value={this.props.squares[i]}
                        onClick={() => this.props.onClick(i)}/>;
     }
-
 
     render() {
         return(
